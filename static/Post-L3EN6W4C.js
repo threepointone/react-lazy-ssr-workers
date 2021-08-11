@@ -1,7 +1,7 @@
 import {
   React,
   init_react_shim
-} from "http://localhost:5000/chunk-F2YDFNRX.js";
+} from "https://react-lazy-ssr-workers.pages.dev/chunk-F2YDFNRX.js";
 
 // src/Post.js
 init_react_shim();

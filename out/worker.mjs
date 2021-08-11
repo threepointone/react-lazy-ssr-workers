@@ -11785,8 +11785,8 @@ function Error2({ error }) {
 init_data();
 init_delays();
 var assets = {
-  "index.js": "http://localhost:5000/index.js",
-  "main.css": "http://localhost:5000/main.css"
+  "index.js": "https://react-lazy-ssr-workers.pages.dev/index.js",
+  "main.css": "https://react-lazy-ssr-workers.pages.dev/main.css"
 };
 function render(url, res) {
   let didError = false;

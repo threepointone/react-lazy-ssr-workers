@@ -5,7 +5,7 @@ import {
   init_react_shim,
   require_object_assign,
   require_react
-} from "http://localhost:5000/chunk-F2YDFNRX.js";
+} from "https://react-lazy-ssr-workers.pages.dev/chunk-F2YDFNRX.js";
 
 // node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS({
@@ -20124,9 +20124,9 @@ function NavBar() {
 }
 
 // src/App.js
-var Comments = (0, import_react.lazy)(() => import("http://localhost:5000/Comments-S3NRLB5K.js"));
-var Sidebar = (0, import_react.lazy)(() => import("http://localhost:5000/Sidebar-6KYCXSMX.js"));
-var Post = (0, import_react.lazy)(() => import("http://localhost:5000/Post-L3EN6W4C.js"));
+var Comments = (0, import_react.lazy)(() => import("https://react-lazy-ssr-workers.pages.dev/Comments-S3NRLB5K.js"));
+var Sidebar = (0, import_react.lazy)(() => import("https://react-lazy-ssr-workers.pages.dev/Sidebar-6KYCXSMX.js"));
+var Post = (0, import_react.lazy)(() => import("https://react-lazy-ssr-workers.pages.dev/Post-L3EN6W4C.js"));
 function App({ assets }) {
   return /* @__PURE__ */ React.createElement(Html, {
     assets,
