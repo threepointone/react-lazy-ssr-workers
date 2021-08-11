@@ -1,0 +1,15 @@
+name = "react-lazy-ssr-workers"
+type = "javascript"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+
+[build]
+watch_dir = './out'
+
+[build.upload]
+dir = './out'
+main = './worker.mjs'
+format = 'modules'

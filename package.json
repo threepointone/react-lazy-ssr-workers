@@ -1,0 +1,25 @@
+{
+  "name": "react-lazy-ssr-workers",
+  "version": "0.0.0",
+  "description": "Getting React streaming SSR working on Cloudflare workers ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudflare/wrangler": "^1.19.0",
+    "commander": "^7.2.0",
+    "concurrently": "^6.2.1",
+    "esbuild": "^0.12.16",
+    "express": "^4.17.1",
+    "itty-router": "^2.3.10",
+    "itty-router-extras": "^0.4.2",
+    "miniflare": "^1.3.3",
+    "react": "^18.0.0-alpha-4cc8ec64c-20210726",
+    "react-dom": "^18.0.0-alpha-4cc8ec64c-20210726",
+    "react-error-boundary": "^3.1.3",
+    "serve": "^12.0.0"
+  }
+}
