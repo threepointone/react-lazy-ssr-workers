@@ -10,17 +10,14 @@
 
 import render from "./render";
 import { Router } from "itty-router";
-// app.use((req, res, next) => {
-//   if (req.url.endsWith('.js')) {
-//     // Artificially delay serving JS
-//     // to demonstrate streaming HTML.
-//     setTimeout(next, JS_BUNDLE_DELAY);
-//   } else {
-//     next();
-//   }
-// });
+import { JS_BUNDLE_DELAY } from "./delays";
 
-const { JS_BUNDLE_DELAY } = require("./delays");
+function sleep(time) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}
+
 const app = Router();
 
 app.all("*", (request) => {
@@ -38,6 +35,10 @@ export default {
   async fetch(req) {
     // This should only happen in "production"
     if (req.url.endsWith(".js") || req.url.endsWith(".css")) {
+      if (req.url.endsWith(".js")) {
+        // Artificially delay serving JS
+        await sleep(JS_BUNDLE_DELAY);
+      }
       return fetch(req);
     }
     return app.handle(req).catch(onError);
