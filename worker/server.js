@@ -36,6 +36,10 @@ function onError(error) {
 
 export default {
   async fetch(req) {
+    // This should only happen in "production"
+    if (req.url.endsWith(".js") || req.url.endsWith(".css")) {
+      return fetch(req);
+    }
     return app.handle(req).catch(onError);
   },
 };

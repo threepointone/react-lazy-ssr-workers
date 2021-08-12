@@ -1,10 +1,11 @@
 name = "react-lazy-ssr-workers"
 type = "javascript"
-route = ''
-zone_id = ''
+route = 'https://react-lazy.coolcomputerclub.com/*'
+zone_id = 'ccba0f8264fcb844a22854098f10d4ef'
 usage_model = ''
 compatibility_flags = []
-workers_dev = true
+workers_dev = false
+account_id = "1fc1df98cc4420fe00367c3ab68c1639"
 
 [build]
 watch_dir = './out'
