@@ -77,3 +77,6 @@ typings/
 
 
 .DS_Store
+
+out 
+static 

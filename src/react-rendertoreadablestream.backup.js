@@ -1,6 +1,5 @@
 function renderToReadableStream(children, options) {
   let request;
-  const decoder = new TextDecoder();
   const encoder = new TextEncoder();
   const { readable, writable } = new TransformStream();
   const writer = writable.getWriter();

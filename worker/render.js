@@ -16,8 +16,8 @@ import { API_DELAY, ABORT_DELAY } from "./delays";
 
 // In a real setup, you'd read it from webpack build stats.
 let assets = {
-  "index.js": "https://react-lazy-ssr-workers.pages.dev/index.js",
-  "main.css": "https://react-lazy-ssr-workers.pages.dev/main.css",
+  "index.js": `${STATIC_ROOT}/index.js`,
+  "main.css": `${STATIC_ROOT}/main.css`,
 };
 
 export default function render(url, res) {
