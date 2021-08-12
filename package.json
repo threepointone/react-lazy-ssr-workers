@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./scripts/dev.sh",
     "build": "./scripts/build.sh",
-    "clean": "./scripts/clean.sh"
+    "clean": "./scripts/clean.sh",
+    "publish": "wrangler publish --env production"
   },
   "author": "",
   "license": "ISC",
