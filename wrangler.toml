@@ -4,6 +4,7 @@ route = ''
 zone_id = 'ccba0f8264fcb844a22854098f10d4ef'
 usage_model = ''
 compatibility_flags = []
+compatibility_date = "2021-09-28"
 workers_dev = true
 account_id = "1fc1df98cc4420fe00367c3ab68c1639"
 

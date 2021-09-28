@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cloudflare/wrangler": "^1.19.0",
+    "@cloudflare/wrangler": "^1.19.3",
     "concurrently": "^6.2.1",
     "esbuild": "^0.12.16",
     "itty-router": "^2.3.10",
