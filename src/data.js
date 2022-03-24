@@ -6,7 +6,8 @@
  *
  */
 
-import {createContext, useContext} from 'react';
+import * as React from "react";
+import { createContext, useContext } from "react";
 
 // Note: this file does not demonstrate a real data fetching strategy.
 // We only use this to simulate data fetching happening on the server
@@ -15,7 +16,7 @@ import {createContext, useContext} from 'react';
 
 const DataContext = createContext(null);
 
-export function DataProvider({children, data}) {
+export function DataProvider({ children, data }) {
   return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 }
 
@@ -23,8 +24,8 @@ export function DataProvider({children, data}) {
 // We haven't integrated this part yet, so we'll just use fake data.
 const fakeData = [
   "Wait, it doesn't wait for React to load?",
-  'How does this even work?',
-  'I like marshmallows',
+  "How does this even work?",
+  "I like marshmallows",
 ];
 
 export function useData() {

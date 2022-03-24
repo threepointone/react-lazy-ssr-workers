@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
-export default function Spinner({active = true}) {
+import * as React from "react";
+export default function Spinner({ active = true }) {
   return (
     <div
-      className={['spinner', active && 'spinner--active'].join(' ')}
+      className={["spinner", active && "spinner--active"].join(" ")}
       role="progressbar"
-      aria-busy={active ? 'true' : 'false'}
+      aria-busy={active ? "true" : "false"}
     />
   );
 }

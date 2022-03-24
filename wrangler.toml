@@ -1,21 +1,10 @@
 name = "react-lazy-ssr-workers"
-type = "javascript"
-route = ''
-zone_id = 'ccba0f8264fcb844a22854098f10d4ef'
-usage_model = ''
-compatibility_flags = []
-compatibility_date = "2021-09-28"
-workers_dev = true
-account_id = "1fc1df98cc4420fe00367c3ab68c1639"
+main = 'src/worker/server.js'
+compatibility_flags = ["streams_enable_constructors"]
 
 [env.production]
-workers_dev = false
 route = 'https://react-lazy.coolcomputerclub.com/*'
 
 [build]
-watch_dir = './out'
-
-[build.upload]
-dir = './out'
-main = './worker.mjs'
-format = 'modules'
+command = 'esbuild src/index.js --bundle --loader:.js=jsx --outdir=public --format=esm --splitting --minify'
+watch_dir = 'src'

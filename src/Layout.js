@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
-export default function Layout({children}) {
+import * as React from "react";
+export default function Layout({ children }) {
   return <main>{children}</main>;
 }

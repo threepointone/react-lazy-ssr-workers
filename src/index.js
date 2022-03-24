@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
-import {hydrateRoot} from 'react-dom';
-import App from './App';
+import * as React from "react";
+import { hydrateRoot } from "react-dom";
+import App from "./App";
 
 hydrateRoot(document, <App assets={window.assetManifest} />);

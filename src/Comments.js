@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
-import {useData} from './data';
+import * as React from "react";
+import { useData } from "./data";
 
 export default function Comments() {
   const comments = useData();
