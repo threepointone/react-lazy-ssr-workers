@@ -7,8 +7,6 @@
  */
 
 import * as React from "react";
-// import {renderToString} from 'react-dom/server';
-// import {pipeToNodeWritable} from 'react-dom/server';
 import { renderToReadableStream } from "react-dom/server.browser";
 import App from "../App";
 import { DataProvider } from "../data";
@@ -21,24 +19,7 @@ let assets = {
 };
 
 export default async function render(url, res) {
-  // This is how you would wire it up previously:
-  //
-  // res.send(
-  //   '<!DOCTYPE html>' +
-  //   renderToString(
-  //     <DataProvider data={data}>
-  //       <App assets={assets} />
-  //     </DataProvider>,
-  //   )
-  // );
-
-  // The new wiring is a bit more involved.
-  // TODO res.socket.on('error', error => {
-  //   console.error('Fatal', error);
-  // });
-  // let didError = false;
   const data = createServerData();
-  // const {startWriting, abort} = pipeToNodeWritable(
   let controller = new AbortController();
   try {
     const stream = await renderToReadableStream(
@@ -46,21 +27,7 @@ export default async function render(url, res) {
         <App assets={assets} />
       </DataProvider>,
       {
-        // onReadyToStream() {
-        //  TODO?
-        //   // If something errored before we started streaming, we set the error code appropriately.
-        //   res.statusCode = didError ? 500 : 200;
-        //   res.setHeader('Content-type', 'text/html');
-        //   res.write('<!DOCTYPE html>');
-        //   startWriting();
-        // },
-
         signal: controller.signal,
-
-        // onError(x) {
-        //   didError = true;
-        //   console.error(x);
-        // },
       }
     );
 
@@ -69,6 +36,7 @@ export default async function render(url, res) {
       headers: { "Content-Type": "text/html" },
     });
   } catch (err) {
+    console.error("Server Error", err);
     return new Response(
       '<!doctype html><p>Loading...</p><script src="/index.js"></script>',
       {
@@ -77,13 +45,6 @@ export default async function render(url, res) {
       }
     );
   }
-
-  // Abandon and switch to client rendering if enough time passes.
-  // Try lowering this to see the client recover.
-  // setTimeout(() => {
-  //   stream.cancel();
-  // }, ABORT_DELAY);
-  // return stream;
 }
 
 // Simulate a delay caused by data fetching.

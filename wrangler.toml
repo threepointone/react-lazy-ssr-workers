@@ -1,10 +1,10 @@
 name = "react-lazy-ssr-workers"
 main = 'src/worker/server.js'
 compatibility_flags = ["streams_enable_constructors"]
+compatibility_date = "2022-03-24"
 
 [env.production]
 route = 'https://react-lazy.coolcomputerclub.com/*'
 
 [build]
-command = 'esbuild src/index.js --bundle --loader:.js=jsx --outdir=public --format=esm --splitting --minify'
-watch_dir = 'src'
+command = 'esbuild src/index.js --bundle --loader:.js=jsx --outdir=public --format=esm --splitting --minify' # build front end assets 

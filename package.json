@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./scripts/dev.sh",
-    "build": "./scripts/build.sh",
-    "clean": "./scripts/clean.sh",
-    "publish": "wrangler publish --env production"
+    "dev": "wrangler dev --experimental-public public",
+    "publish": "wrangler publish --experimental-public public --env production"
   },
   "author": "",
   "license": "ISC",
