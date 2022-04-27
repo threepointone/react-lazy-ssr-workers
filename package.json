@@ -14,8 +14,8 @@
     "concurrently": "^7.0.0",
     "itty-router": "^2.6.0",
     "itty-router-extras": "^0.4.2",
-    "react": "^18.0.0-rc.3",
-    "react-dom": "^18.0.0-rc.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-error-boundary": "^3.1.4",
     "wrangler": "^0.0.27"
   }
