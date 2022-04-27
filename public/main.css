@@ -23,11 +23,13 @@ nav {
   width: 60%;
 }
 
-h1, h2 {
+h1,
+h2 {
   padding: 0;
 }
 
-ul, li {
+ul,
+li {
   margin: 0;
 }
 

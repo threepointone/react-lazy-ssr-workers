@@ -1,7 +1,7 @@
 name = "react-lazy-ssr-workers"
 main = 'src/worker/server.js'
 compatibility_flags = ["streams_enable_constructors"]
-compatibility_date = "2022-03-24"
+compatibility_date = "2022-04-27"
 
 [env.production]
 route = 'https://react-lazy.coolcomputerclub.com/*'
