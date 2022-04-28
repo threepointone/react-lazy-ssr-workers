@@ -21,6 +21,7 @@ let assets = {
 export default async function render(url, res) {
   const data = createServerData();
   let controller = new AbortController();
+  let didError = false;
   try {
     const stream = await renderToReadableStream(
       <DataProvider data={data}>
@@ -28,11 +29,24 @@ export default async function render(url, res) {
       </DataProvider>,
       {
         signal: controller.signal,
+        onError(error) {
+          didError = true;
+          console.error(error);
+        },
       }
     );
 
-    await stream.allReady;
-    return new Response(stream, {
+    // uncomment this to buffer till it's all ready
+    // await stream.allReady;
+
+    // until the Workers bug is fixed, pipe it through a TransformStream
+    let { readable, writable } = new TransformStream();
+    stream.pipeTo(writable);
+    //
+
+    // return new Response(stream, {
+    return new Response(readable, {
+      status: didError ? 500 : 200,
       headers: { "Content-Type": "text/html" },
     });
   } catch (err) {
