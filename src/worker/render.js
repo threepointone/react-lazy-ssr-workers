@@ -39,13 +39,7 @@ export default async function render(url, res) {
     // uncomment this to buffer till it's all ready
     // await stream.allReady;
 
-    // until the Workers bug is fixed, pipe it through a TransformStream
-    let { readable, writable } = new TransformStream();
-    stream.pipeTo(writable);
-    //
-
-    // return new Response(stream, {
-    return new Response(readable, {
+    return new Response(stream, {
       status: didError ? 500 : 200,
       headers: { "Content-Type": "text/html" },
     });
