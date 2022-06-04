@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "wrangler dev --experimental-public public",
-    "publish": "wrangler publish --experimental-public public --env production"
+    "publish": "NODE_ENV=production wrangler publish --experimental-public public --env production --minify"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,6 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-error-boundary": "^3.1.4",
-    "wrangler": "^0.0.27"
+    "wrangler": "2.0.7"
   }
 }
